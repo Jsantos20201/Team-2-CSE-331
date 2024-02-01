@@ -9,6 +9,7 @@
 
 #pragma once
 #include "position.h"
+#include "advance.h"
 
 /**********************
  * BIRD
@@ -18,11 +19,12 @@ class Bird
 {
 protected:
    static Position dimensions; // size of the screen
-   Position pt;                  // position of the flyer
-   Velocity v;                // velocity of the flyer
-   double radius;             // the size (radius) of the flyer
-   bool dead;                 // is this flyer dead?
-   int points;                // how many points is this worth?
+   Position pt;                // position of the flyer
+   Velocity v;                 // velocity of the flyer
+   //Advance advance;            // The advance strategy
+   double radius;              // the size (radius) of the flyer
+   bool dead;                  // is this flyer dead?
+   int points;                 // how many points is this worth?
    
 public:
    Bird() : dead(false), points(0), radius(1.0) { }
@@ -47,7 +49,7 @@ public:
 
    // special functions
    virtual void draw() = 0;
-   virtual void advance() = 0;
+   virtual void advance() {};
 };
 
 /*********************************************
