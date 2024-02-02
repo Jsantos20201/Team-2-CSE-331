@@ -1,2 +1,0 @@
-C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet\x64\Debug\Skeet.exe
-C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\x64\Debug\Skeet.exe

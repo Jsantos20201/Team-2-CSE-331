@@ -1,4 +1,0 @@
-ToolSet: w64 5.0 (local)@C:\Users\erick\anaconda3\Library\mingw-w64
-Options: 
-
-Options:-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.2.2/bin/ninja/win/x64/ninja.exe
