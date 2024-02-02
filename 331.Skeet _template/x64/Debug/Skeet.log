@@ -1,0 +1,88 @@
+﻿  bird.cpp
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(16,21): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(18,18): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(32,9): error C2143: syntax error: missing ';' before '&'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(32,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(32,15): error C2238: unexpected token(s) preceding ';'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(33,26): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(38,23): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(39,27): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(40,23): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(16,39): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(16,34): error C2614: 'AdvanceTemplate': illegal member initialization: 'bird' is not a base or member
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(20,17): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(21,14): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(22,18): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(23,14): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(25,13): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(27,13): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(36,9): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(36,32): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(51,20): error C2061: syntax error: identifier 'Floater'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(55,15): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(60,19): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(51,56): error C2065: 'floater': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(57,9): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(57,16): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(62,24): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(63,9): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\bird.h(13,10): fatal  error C1083: Cannot open include file: 'advanceFloater.h': No such file or directory
+  game.cpp
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(16,21): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(18,18): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(32,9): error C2143: syntax error: missing ';' before '&'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(32,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(32,15): error C2238: unexpected token(s) preceding ';'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(33,26): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(38,23): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(39,27): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(40,23): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(16,39): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(16,34): error C2614: 'AdvanceTemplate': illegal member initialization: 'bird' is not a base or member
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(20,17): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(21,14): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(22,18): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(23,14): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(25,13): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(27,13): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(36,9): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(36,32): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(51,20): error C2061: syntax error: identifier 'Floater'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(55,15): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(60,19): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(51,56): error C2065: 'floater': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(57,9): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(57,16): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(62,24): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(63,9): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\bird.h(13,10): fatal  error C1083: Cannot open include file: 'advanceFloater.h': No such file or directory
+  skeet.cpp
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(16,21): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(18,18): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(32,9): error C2143: syntax error: missing ';' before '&'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(32,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(32,15): error C2238: unexpected token(s) preceding ';'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(33,26): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(38,23): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(39,27): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(40,23): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(16,39): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(16,34): error C2614: 'AdvanceTemplate': illegal member initialization: 'bird' is not a base or member
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(20,17): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(21,14): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(22,18): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(23,14): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(25,13): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(27,13): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(36,9): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(36,32): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(51,20): error C2061: syntax error: identifier 'Floater'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(55,15): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(60,19): error C2061: syntax error: identifier 'Bird'
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(51,56): error C2065: 'floater': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(57,9): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(57,16): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(62,24): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\advanceTemplate.h(63,9): error C2065: 'bird': undeclared identifier
+C:\Users\erick\Documents\Erick Alienware\BYUI\2024 Winter\CSE331 - Design Patterns\331.Skeet _template\bird.h(13,10): fatal  error C1083: Cannot open include file: 'advanceFloater.h': No such file or directory
+  Generating Code...
