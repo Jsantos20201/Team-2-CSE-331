@@ -272,7 +272,7 @@ double Bullet::random(double min, double max)
  * subscribe to an observer, adding it to the audience list
  ****************************************************************/
 void Bullet::subscribe(Status observer) {
-
+   audience.push_back(observer);
 }
 
 /******************************************************************
@@ -280,13 +280,16 @@ void Bullet::subscribe(Status observer) {
  * unsubscribe to an observer, removing it from the audience list
  ****************************************************************/
 void Bullet::unsubscribe(Status observer) {
-
+   audience.erase(find(audience.begin(), audience.end(), observer));
 }
 
 /******************************************************************
  * NOTIFY
  * send a message to all the observers in the audience list
  ****************************************************************/
-void Bullet::notify() {
-
+void Bullet::notify(int message) {
+   for (auto it : audience)
+   {
+      it.update(message);
+   }
 }

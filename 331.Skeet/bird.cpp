@@ -337,3 +337,36 @@ void Sinker::draw()
       drawDisk(pt, radius - 4.0, 0.0, 0.0, 0.0);
    }
 }
+
+/***************************************************************/
+/***************************************************************/
+/*                         OBSERVER                            */
+/***************************************************************/
+/***************************************************************/
+
+/******************************************************************
+ * SUBSCRIBE
+ * subscribe to an observer, adding it to the audience list
+ ****************************************************************/
+void Bird::subscribe(Status observer) {
+   audience.push_back(observer);
+}
+
+/******************************************************************
+ * UNSUBSCRIBE
+ * unsubscribe to an observer, removing it from the audience list
+ ****************************************************************/
+void Bird::unsubscribe(Status observer) {
+   audience.erase(find(audience.begin(), audience.end(), observer));
+}
+
+/******************************************************************
+ * NOTIFY
+ * send a message to all the observers in the audience list
+ ****************************************************************/
+void Bird::notify(int message) {
+   for (auto it : audience)
+   {
+      it.update(message);
+   }
+}
