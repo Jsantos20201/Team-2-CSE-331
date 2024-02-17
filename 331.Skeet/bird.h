@@ -29,6 +29,7 @@ protected:
    
 public:
    Bird() : dead(false), points(0), radius(1.0) { }
+
    
    // setters
    void operator=(const Position    & rhs) { pt = rhs;    }
@@ -65,7 +66,7 @@ public:
 class Standard : public Bird
 {
 public:
-    Standard(double radius = 25.0, double speed = 5.0, int points = 10);
+    Standard(Score* score, HitRatio* hitRatio, double radius = 25.0, double speed = 5.0, int points = 10);
     void draw();
     void advance();
 };
@@ -77,7 +78,7 @@ public:
 class Floater : public Bird
 {
 public:
-    Floater(double radius = 30.0, double speed = 5.0, int points = 15);
+    Floater(Score* score, HitRatio* hitRatio, double radius = 30.0, double speed = 5.0, int points = 15);
     void draw();
     void advance();
 };
@@ -89,7 +90,7 @@ public:
 class Crazy : public Bird
 {
 public:
-    Crazy(double radius = 30.0, double speed = 4.5, int points = 30);
+    Crazy(Score* score, HitRatio* hitRatio, double radius = 30.0, double speed = 4.5, int points = 30);
     void draw();
     void advance();
 };
@@ -101,7 +102,7 @@ public:
 class Sinker : public Bird
 {
 public:
-    Sinker(double radius = 30.0, double speed = 4.5, int points = 20);
+    Sinker(Score* score, HitRatio* hitRatio, double radius = 30.0, double speed = 4.5, int points = 20);
     void draw();
     void advance();
 };

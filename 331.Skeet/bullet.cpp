@@ -48,8 +48,26 @@ Bullet::Bullet(double angle, double speed, double radius, int value) :
    assert(v.getDx() <= 0.0);
    assert(v.getDy() >= 0.0);
 
-   Score* obScore;
-   subscribe(obScore);
+}
+
+/*********************************************
+ * BULLET Observer constructor
+ *********************************************/
+Bullet::Bullet(Score * score, double angle, double speed, double radius, int value) :
+   dead(false), radius(radius), value(value)
+{
+   // set the initial position
+   pt.setX(dimensions.getX() - 1.0);
+   pt.setY(1.0);
+   assert(pt.getX() > 100.0);
+
+   // set the initial velocity
+   v.setDx(-speed * cos(angle));
+   v.setDy(speed * sin(angle));
+   assert(v.getDx() <= 0.0);
+   assert(v.getDy() >= 0.0);
+
+   subscribe(score);
    notify(-value);
 }
 

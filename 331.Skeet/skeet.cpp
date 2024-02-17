@@ -54,6 +54,10 @@ void Skeet::animate()
    spawn();
    
    // move the birds and the bullets
+   for (auto element : birds)
+   {
+      element->advance();
+   }
    for (auto bullet : bullets)
       bullet->move(effects);
    for (auto effect : effects)
@@ -305,9 +309,9 @@ void Skeet::drawLevel() const
       element->draw();
    
    // status
-   drawText(Position(10,                         dimensions.getY() - 30), score.getText()  );
-   drawText(Position(dimensions.getX() / 2 - 30, dimensions.getY() - 30), time.getText()   );
-   drawText(Position(dimensions.getX() - 110,    dimensions.getY() - 30), hitRatio.getText());
+   drawText(Position(10,                         dimensions.getY() - 30), score->getText()  );
+   drawText(Position(dimensions.getX() / 2 - 30, dimensions.getY() - 30), time.getText());
+   drawText(Position(dimensions.getX() - 110,    dimensions.getY() - 30), hitRatio->getText());
 }
 
 /************************
@@ -326,7 +330,7 @@ void Skeet::drawStatus() const
 
       // draw end of game status
       drawText(Position(dimensions.getX() / 2 - 30, dimensions.getY() / 2 - 10),
-               score.getText());
+               score->getText());
    }
    else
    {
@@ -353,8 +357,8 @@ void Skeet::interact(const UserInput & ui)
    if (time.isGameOver() && ui.isSpace())
    { 
       time.reset();
-      score.reset();
-      hitRatio.reset();
+      score->reset();
+      hitRatio->reset();
       return;
    }
 
@@ -364,13 +368,13 @@ void Skeet::interact(const UserInput & ui)
 
    // a pellet can be shot at any time
    if (ui.isSpace())
-      p = new Pellet(gun.getAngle());
+      p = new Pellet(score, gun.getAngle());
    // missiles can be shot at level 2 and higher
    else if (ui.isM() && time.level() > 1)
-      p = new Missile(gun.getAngle());
+      p = new Missile(score, gun.getAngle());
    // bombs can be shot at level 3 and higher
    else if (ui.isB() && time.level() > 2)
-      p = new Bomb(gun.getAngle());
+      p = new Bomb(score, gun.getAngle());
    
    bullseye = ui.isShift();
 
@@ -413,11 +417,11 @@ void Skeet::spawn()
          size = 30.0;
          // spawns when there is nothing on the screen
          if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 7.0));
+            birds.push_back(new Standard(score, hitRatio, size, 7.0));
          
          // spawn every 4 seconds
          if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 7.0));
+            birds.push_back(new Standard(score, hitRatio, size, 7.0));
          break;
          
       // two kinds of birds in level 2
@@ -425,14 +429,14 @@ void Skeet::spawn()
          size = 25.0;
          // spawns when there is nothing on the screen
          if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 7.0, 12));
+            birds.push_back(new Standard(score, hitRatio, size, 7.0, 12));
 
          // spawn every 4 seconds
          if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 5.0, 12));
+            birds.push_back(new Standard(score, hitRatio, size, 5.0, 12));
          // spawn every 3 seconds
          if (random(0, 3 * 30) == 1)
-            birds.push_back(new Sinker(size));
+            birds.push_back(new Sinker(score, hitRatio, size));
          break;
       
       // three kinds of birds in level 3
@@ -440,17 +444,17 @@ void Skeet::spawn()
          size = 20.0;
          // spawns when there is nothing on the screen
          if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 5.0, 15));
+            birds.push_back(new Standard(score, hitRatio, size, 5.0, 15));
 
          // spawn every 4 seconds
          if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 5.0, 15));
+            birds.push_back(new Standard(score, hitRatio, size, 5.0, 15));
          // spawn every 4 seconds
          if (random(0, 4 * 30) == 1)
-            birds.push_back(new Sinker(size, 4.0, 22));
+            birds.push_back(new Sinker(score, hitRatio, size, 4.0, 22));
          // spawn every 4 seconds
          if (random(0, 4 * 30) == 1)
-            birds.push_back(new Floater(size));
+            birds.push_back(new Floater(score, hitRatio, size));
          break;
          
       // three kinds of birds in level 4
@@ -458,20 +462,20 @@ void Skeet::spawn()
          size = 15.0;
          // spawns when there is nothing on the screen
          if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 4.0, 18));
+            birds.push_back(new Standard(score, hitRatio, size, 4.0, 18));
 
          // spawn every 4 seconds
          if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 4.0, 18));
+            birds.push_back(new Standard(score, hitRatio, size, 4.0, 18));
          // spawn every 4 seconds
          if (random(0, 4 * 30) == 1)
-            birds.push_back(new Sinker(size, 3.5, 25));
+            birds.push_back(new Sinker(score, hitRatio, size, 3.5, 25));
          // spawn every 4 seconds
          if (random(0, 4 * 30) == 1)
-            birds.push_back(new Floater(size, 4.0, 25));
+            birds.push_back(new Floater(score, hitRatio, size, 4.0, 25));
          // spawn every 4 seconds
          if (random(0, 4 * 30) == 1)
-            birds.push_back(new Crazy(size));
+            birds.push_back(new Crazy(score, hitRatio, size));
          break;
          
       default:

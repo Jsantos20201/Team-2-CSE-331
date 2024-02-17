@@ -29,7 +29,10 @@ class Skeet
 {
 public:
     Skeet(Position & dimensions) : dimensions(dimensions),
-        gun(Position(800.0, 0.0)), time(), score(), hitRatio(), bullseye(false) {}
+        gun(Position(800.0, 0.0)), time(), score(), hitRatio(), bullseye(false) {
+       score = new Score();
+       hitRatio = new HitRatio();
+    }
 
     // handle all user input
     void interact(const UserInput& ui);
@@ -58,8 +61,8 @@ private:
     std::list<Effect*> effects;    // the fragments of a dead bird.
     std::list<Points>  points;     // point values;
     Time time;                     // how many frames have transpired since the beginning
-    Score score;                   // the player's score
-    HitRatio hitRatio;             // the hit ratio for the birds
+    Score *score;                   // the player's score
+    HitRatio *hitRatio;             // the hit ratio for the birds
     Position dimensions;           // size of the screen
     bool bullseye;
 };

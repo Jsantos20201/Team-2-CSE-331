@@ -27,7 +27,7 @@ string Score::getText() const
  * Observer function to update points
  ************************/
 void Score::update(int message) {
-   points += message;
+   points = points + message;
 }
 
 /************************
