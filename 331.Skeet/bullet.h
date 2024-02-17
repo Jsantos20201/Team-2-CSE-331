@@ -10,7 +10,7 @@
 #pragma once
 #include "position.h"
 #include "effect.h"
-#include "status.h"
+#include "score.h"
 #include <list>
 #include <cassert>
 #include <vector>

@@ -9,7 +9,7 @@
 
 #pragma once
 #include "position.h"
-#include "status.h"
+#include "score.h"
 #include <vector>
 
 /**********************

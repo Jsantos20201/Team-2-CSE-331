@@ -19,8 +19,10 @@ class Status
 public:
     Status() {}
     virtual std::string getText() const = 0;
-    virtual void adjust(int value) = 0;
     virtual void reset() = 0;
+
+    //For the observers
+    virtual void update(int message) = 0;
 };
 
 /**********************
@@ -32,8 +34,10 @@ class Score : public Status
 public:
     Score() { reset(); }
     std::string getText() const;
-    void adjust(int value) { points += value; }
     void reset() { points = 0; }
+
+    //For the observers
+    virtual void update(int message);
 private:
     int points;
 };
@@ -47,8 +51,10 @@ class HitRatio : public Status
 public:
     HitRatio()  { reset(); }
     std::string getText() const;
-    void adjust(int value);
     void reset() { numKilled = numMissed = 0; }
+
+    //for the observers
+    virtual void update(int message);
 private:
     int numKilled;
     int numMissed;
