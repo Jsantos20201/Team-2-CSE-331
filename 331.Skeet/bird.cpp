@@ -68,7 +68,7 @@ double randomFloat(double min, double max)
 /******************************************************************
  * STANDARD constructor
  ******************************************************************/
-Standard::Standard(double radius, double speed, int points) : Bird()
+Standard::Standard(Score* score, HitRatio* hitRatio, double radius, double speed, int points) : Bird()
 {
    // set the position: standard birds start from the middle
    pt.setY(randomFloat(dimensions.getY() * 0.25, dimensions.getY() * 0.75));
@@ -80,7 +80,8 @@ Standard::Standard(double radius, double speed, int points) : Bird()
 
    // set the points
    this->points = points;
-
+   subscribe(score);
+   subscribe(hitRatio);
    // set the size
    this->radius = radius;
 }
@@ -88,7 +89,7 @@ Standard::Standard(double radius, double speed, int points) : Bird()
 /******************************************************************
  * FLOATER constructor
  ******************************************************************/
-Floater::Floater(double radius, double speed, int points) : Bird()
+Floater::Floater(Score* score, HitRatio* hitRatio, double radius, double speed, int points) : Bird()
 {
    // floaters start on the lower part of the screen because they go up with time
    pt.setY(randomFloat(dimensions.getY() * 0.01, dimensions.getY() * 0.5));
@@ -100,7 +101,8 @@ Floater::Floater(double radius, double speed, int points) : Bird()
 
    // set the points value
    this->points = points;
-
+   subscribe(score);
+   subscribe(hitRatio);
    // set the size
    this->radius = radius;
 }
@@ -108,7 +110,7 @@ Floater::Floater(double radius, double speed, int points) : Bird()
 /******************************************************************
  * SINKER constructor
  ******************************************************************/
-Sinker::Sinker(double radius, double speed, int points) : Bird()
+Sinker::Sinker(Score* score, HitRatio* hitRatio, double radius, double speed, int points) : Bird()
 {
    // sinkers start on the upper part of the screen because they go down with time
    pt.setY(randomFloat(dimensions.getY() * 0.50, dimensions.getY() * 0.95));
@@ -120,7 +122,8 @@ Sinker::Sinker(double radius, double speed, int points) : Bird()
 
    // set the points value
    this->points = points;
-
+   subscribe(score);
+   subscribe(hitRatio);
    // set the size
    this->radius = radius;
 }
@@ -128,7 +131,7 @@ Sinker::Sinker(double radius, double speed, int points) : Bird()
 /******************************************************************
  * CRAZY constructor
  ******************************************************************/
-Crazy::Crazy(double radius, double speed, int points) : Bird()
+Crazy::Crazy(Score* score, HitRatio* hitRatio, double radius, double speed, int points) : Bird()
 {
    // crazy birds start in the middle and can go any which way
    pt.setY(randomFloat(dimensions.getY() * 0.25, dimensions.getY() * 0.75));
@@ -140,7 +143,8 @@ Crazy::Crazy(double radius, double speed, int points) : Bird()
 
    // set the points value
    this->points = points;
-
+   subscribe(score);
+   subscribe(hitRatio);
    // set the size
    this->radius = radius;
 }
@@ -336,4 +340,45 @@ void Sinker::draw()
       drawDisk(pt, radius - 0.0, 0.0, 0.0, 0.8);
       drawDisk(pt, radius - 4.0, 0.0, 0.0, 0.0);
    }
+}
+
+/***************************************************************/
+/***************************************************************/
+/*                         OBSERVER                            */
+/***************************************************************/
+/***************************************************************/
+
+/******************************************************************
+ * SUBSCRIBE
+ * subscribe to an observer, adding it to the audience list
+ ****************************************************************/
+void Bird::subscribe(Status * observer) {
+   audience.push_back(observer);
+}
+
+/******************************************************************
+ * UNSUBSCRIBE
+ * unsubscribe to an observer, removing it from the audience list
+ ****************************************************************/
+void Bird::unsubscribe(Status * observer) {
+   audience.erase(find(audience.begin(), audience.end(), observer));
+}
+
+/******************************************************************
+ * NOTIFY
+ * send a message to all the observers in the audience list
+ ****************************************************************/
+void Bird::notify(int message) {
+   for (auto it : audience)
+   {
+      it->update(message);
+   }
+}
+
+void Bird::kill() { 
+   dead = true; 
+   if (!isOutOfBounds())
+      notify(points);
+   else
+      notify(-points);
 }

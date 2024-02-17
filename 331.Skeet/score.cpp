@@ -23,6 +23,14 @@ string Score::getText() const
 }
 
 /************************
+ * SCORE UPDATE
+ * Observer function to update points
+ ************************/
+void Score::update(int message) {
+   points = points + message;
+}
+
+/************************
  * HIT RATIO  GET TEXT
  * Get the status text
  ************************/
@@ -41,13 +49,12 @@ string HitRatio::getText() const
 }
 
 /************************
- * HIT RATIO  ADJUST
- * Adjust the score for a bird hit (positive) or missed (negative)
+ * HIT Ratio UPDATE
+ * Observer function to update hit ratio
  ************************/
-void HitRatio::adjust(int value)
-{
-    if (value > 0)
-        numKilled++;
-    else if (value < 0)
-        numMissed++;
+void HitRatio::update(int message) {
+   if (message > 0)
+      numKilled++;
+   else if (message < 0)
+      numMissed++;
 }

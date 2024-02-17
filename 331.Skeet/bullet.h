@@ -10,8 +10,10 @@
 #pragma once
 #include "position.h"
 #include "effect.h"
+#include "score.h"
 #include <list>
 #include <cassert>
+#include <vector>
 
 /*********************************************
  * BULLET
@@ -20,15 +22,17 @@
 class Bullet
 {
 protected:
-   static Position dimensions;   // size of the screen
-   Position pt;                  // position of the bullet
-   Velocity v;                // velocity of the bullet
-   double radius;             // the size (radius) of the bullet
-   bool dead;                 // is this bullet dead?
-   int value;                 // how many points does this cost?
+   static Position dimensions;    // size of the screen
+   Position pt;                   // position of the bullet
+   Velocity v;                    // velocity of the bullet
+   double radius;                 // the size (radius) of the bullet
+   bool dead;                     // is this bullet dead?
+   int value;                     // how many points does this cost?
+   std::vector<Status *> audience; // for the observer
     
 public:
    Bullet(double angle = 0.0, double speed = 30.0, double radius = 5.0, int value = 1);
+   Bullet(Score * score, double angle = 0.0, double speed = 30.0, double radius = 5.0, int value = 1);
    
    // setters
    void kill()                   { dead = true; }
@@ -46,6 +50,11 @@ public:
    virtual void output() = 0;
    virtual void input(bool isUp, bool isDown, bool isB) {}
    virtual void move(std::list<Effect*> &effects);
+
+   // New Functions for the Observer
+   void subscribe(Status * observer);
+   void unsubscribe(Status * observer);
+   void notify(int message);
 
 protected:
    bool isOutOfBounds() const
@@ -69,7 +78,7 @@ protected:
 class Pellet : public Bullet
 {
 public:
-   Pellet(double angle, double speed = 15.0) : Bullet(angle, speed, 1.0, 1) {}
+   Pellet(Score* score, double angle, double speed = 15.0) : Bullet(score, angle, speed, 1.0, 1) {}
    
    void output();
 };
@@ -83,7 +92,7 @@ class Bomb : public Bullet
 private:
    int timeToDie;
 public:
-   Bomb(double angle, double speed = 10.0) : Bullet(angle, speed, 4.0, 4), timeToDie(60) {}
+   Bomb(Score* score, double angle, double speed = 10.0) : Bullet(score, angle, speed, 4.0, 4), timeToDie(60) {}
    
    void output();
    void move(std::list<Effect*> & effects);
@@ -99,7 +108,7 @@ class Shrapnel : public Bullet
 private:
    int timeToDie;
 public:
-   Shrapnel(const Bomb & bomb)
+   Shrapnel(const Bomb & bomb) : Bullet()
    {
       // how long will this one live?
       timeToDie = random(5, 15);
@@ -125,7 +134,7 @@ public:
 class Missile : public Bullet
 {
 public:
-   Missile(double angle, double speed = 10.0) : Bullet(angle, speed, 1.0, 3) {}
+   Missile(Score* score, double angle, double speed = 10.0) : Bullet(score, angle, speed, 1.0, 3) {}
    
    void output();
    void input(bool isUp, bool isDown, bool isB)

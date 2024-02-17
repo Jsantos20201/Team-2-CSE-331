@@ -47,6 +47,28 @@ Bullet::Bullet(double angle, double speed, double radius, int value) :
    v.setDy(speed * sin(angle));
    assert(v.getDx() <= 0.0);
    assert(v.getDy() >= 0.0);
+
+}
+
+/*********************************************
+ * BULLET Observer constructor
+ *********************************************/
+Bullet::Bullet(Score * score, double angle, double speed, double radius, int value) :
+   dead(false), radius(radius), value(value)
+{
+   // set the initial position
+   pt.setX(dimensions.getX() - 1.0);
+   pt.setY(1.0);
+   assert(pt.getX() > 100.0);
+
+   // set the initial velocity
+   v.setDx(-speed * cos(angle));
+   v.setDy(speed * sin(angle));
+   assert(v.getDx() <= 0.0);
+   assert(v.getDy() >= 0.0);
+
+   subscribe(score);
+   notify(-value);
 }
 
 /*********************************************
@@ -258,4 +280,38 @@ double Bullet::random(double min, double max)
    double num = min + ((double)rand() / (double)RAND_MAX * (max - min));
    assert(min <= num && num <= max);
    return num;
+}
+
+
+/***************************************************************/
+/***************************************************************/
+/*                         OBSERVER                            */
+/***************************************************************/
+/***************************************************************/
+
+/******************************************************************
+ * SUBSCRIBE
+ * subscribe to an observer, adding it to the audience list
+ ****************************************************************/
+void Bullet::subscribe(Status * observer) {
+   audience.push_back(observer);
+}
+
+/******************************************************************
+ * UNSUBSCRIBE
+ * unsubscribe to an observer, removing it from the audience list
+ ****************************************************************/
+void Bullet::unsubscribe(Status * observer) {
+   audience.erase(find(audience.begin(), audience.end(), observer));
+}
+
+/******************************************************************
+ * NOTIFY
+ * send a message to all the observers in the audience list
+ ****************************************************************/
+void Bullet::notify(int message) {
+   for (auto it : audience)
+   {
+      it->update(message);
+   }
 }
