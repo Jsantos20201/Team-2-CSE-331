@@ -259,3 +259,34 @@ double Bullet::random(double min, double max)
    assert(min <= num && num <= max);
    return num;
 }
+
+
+/***************************************************************/
+/***************************************************************/
+/*                         OBSERVER                            */
+/***************************************************************/
+/***************************************************************/
+
+/******************************************************************
+ * SUBSCRIBE
+ * subscribe to an observer, adding it to the audience list
+ ****************************************************************/
+void Bullet::subscribe(Status observer) {
+
+}
+
+/******************************************************************
+ * UNSUBSCRIBE
+ * unsubscribe to an observer, removing it from the audience list
+ ****************************************************************/
+void Bullet::unsubscribe(Status observer) {
+
+}
+
+/******************************************************************
+ * NOTIFY
+ * send a message to all the observers in the audience list
+ ****************************************************************/
+void Bullet::notify() {
+
+}

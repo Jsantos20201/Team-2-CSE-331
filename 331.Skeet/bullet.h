@@ -10,8 +10,10 @@
 #pragma once
 #include "position.h"
 #include "effect.h"
+#include "status.h"
 #include <list>
 #include <cassert>
+#include <vector>
 
 /*********************************************
  * BULLET
@@ -20,12 +22,13 @@
 class Bullet
 {
 protected:
-   static Position dimensions;   // size of the screen
-   Position pt;                  // position of the bullet
-   Velocity v;                // velocity of the bullet
-   double radius;             // the size (radius) of the bullet
-   bool dead;                 // is this bullet dead?
-   int value;                 // how many points does this cost?
+   static Position dimensions;    // size of the screen
+   Position pt;                   // position of the bullet
+   Velocity v;                    // velocity of the bullet
+   double radius;                 // the size (radius) of the bullet
+   bool dead;                     // is this bullet dead?
+   int value;                     // how many points does this cost?
+   std::vector<Status> *audience; // for the observer
     
 public:
    Bullet(double angle = 0.0, double speed = 30.0, double radius = 5.0, int value = 1);
@@ -46,6 +49,11 @@ public:
    virtual void output() = 0;
    virtual void input(bool isUp, bool isDown, bool isB) {}
    virtual void move(std::list<Effect*> &effects);
+
+   // New Functions for the Observer
+   void subscribe(Status observer);
+   void unsubscribe(Status observer);
+   void notify(int message);
 
 protected:
    bool isOutOfBounds() const
