@@ -25,7 +25,7 @@ protected:
    double radius;                   // the size (radius) of the flyer
    bool dead;                       // is this flyer dead?
    int points;                     // how many points is this worth?
-   std::vector<Status> audience;  // for the observer
+   std::vector<Status *> audience;  // for the observer
    
 public:
    Bird() : dead(false), points(0), radius(1.0) { }
@@ -33,7 +33,7 @@ public:
    // setters
    void operator=(const Position    & rhs) { pt = rhs;    }
    void operator=(const Velocity & rhs) { v = rhs;     }
-   void kill()                          { dead = true; }
+   void kill();                  
    void setPoints(int pts)              { points = pts;}
 
    // getters
@@ -53,8 +53,8 @@ public:
    virtual void advance() = 0;
 
    // New Functions for the Observer
-   void subscribe(Status observer);
-   void unsubscribe(Status observer);
+   void subscribe(Status * observer);
+   void unsubscribe(Status * observer);
    void notify(int message);
 };
 

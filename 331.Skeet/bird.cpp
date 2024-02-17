@@ -80,7 +80,10 @@ Standard::Standard(double radius, double speed, int points) : Bird()
 
    // set the points
    this->points = points;
-
+   Score * obScore;
+   HitRatio * obHitRatio;
+   subscribe(obScore);
+   subscribe(obHitRatio);
    // set the size
    this->radius = radius;
 }
@@ -100,7 +103,10 @@ Floater::Floater(double radius, double speed, int points) : Bird()
 
    // set the points value
    this->points = points;
-
+   Score* obScore;
+   HitRatio* obHitRatio;
+   subscribe(obScore);
+   subscribe(obHitRatio);
    // set the size
    this->radius = radius;
 }
@@ -120,7 +126,10 @@ Sinker::Sinker(double radius, double speed, int points) : Bird()
 
    // set the points value
    this->points = points;
-
+   Score* obScore;
+   HitRatio* obHitRatio;
+   subscribe(obScore);
+   subscribe(obHitRatio);
    // set the size
    this->radius = radius;
 }
@@ -140,7 +149,10 @@ Crazy::Crazy(double radius, double speed, int points) : Bird()
 
    // set the points value
    this->points = points;
-
+   Score* obScore;
+   HitRatio* obHitRatio;
+   subscribe(obScore);
+   subscribe(obHitRatio);
    // set the size
    this->radius = radius;
 }
@@ -348,7 +360,7 @@ void Sinker::draw()
  * SUBSCRIBE
  * subscribe to an observer, adding it to the audience list
  ****************************************************************/
-void Bird::subscribe(Status observer) {
+void Bird::subscribe(Status * observer) {
    audience.push_back(observer);
 }
 
@@ -356,7 +368,7 @@ void Bird::subscribe(Status observer) {
  * UNSUBSCRIBE
  * unsubscribe to an observer, removing it from the audience list
  ****************************************************************/
-void Bird::unsubscribe(Status observer) {
+void Bird::unsubscribe(Status * observer) {
    audience.erase(find(audience.begin(), audience.end(), observer));
 }
 
@@ -367,6 +379,14 @@ void Bird::unsubscribe(Status observer) {
 void Bird::notify(int message) {
    for (auto it : audience)
    {
-      it.update(message);
+      it->update(message);
    }
+}
+
+void Bird::kill() { 
+   dead = true; 
+   if (!isOutOfBounds())
+      notify(points);
+   else
+      notify(-points);
 }

@@ -28,7 +28,7 @@ protected:
    double radius;                 // the size (radius) of the bullet
    bool dead;                     // is this bullet dead?
    int value;                     // how many points does this cost?
-   std::vector<Status> audience; // for the observer
+   std::vector<Status *> audience; // for the observer
     
 public:
    Bullet(double angle = 0.0, double speed = 30.0, double radius = 5.0, int value = 1);
@@ -51,8 +51,8 @@ public:
    virtual void move(std::list<Effect*> &effects);
 
    // New Functions for the Observer
-   void subscribe(Status observer);
-   void unsubscribe(Status observer);
+   void subscribe(Status * observer);
+   void unsubscribe(Status * observer);
    void notify(int message);
 
 protected:

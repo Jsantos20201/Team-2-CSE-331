@@ -37,7 +37,7 @@ public:
     void reset() { points = 0; }
 
     //For the observers
-    virtual void update(int message);
+    void update(int message);
 private:
     int points;
 };
@@ -54,7 +54,7 @@ public:
     void reset() { numKilled = numMissed = 0; }
 
     //for the observers
-    virtual void update(int message);
+    void update(int message);
 private:
     int numKilled;
     int numMissed;

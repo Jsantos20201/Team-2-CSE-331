@@ -47,6 +47,10 @@ Bullet::Bullet(double angle, double speed, double radius, int value) :
    v.setDy(speed * sin(angle));
    assert(v.getDx() <= 0.0);
    assert(v.getDy() >= 0.0);
+
+   Score* obScore;
+   subscribe(obScore);
+   notify(-value);
 }
 
 /*********************************************
@@ -271,7 +275,7 @@ double Bullet::random(double min, double max)
  * SUBSCRIBE
  * subscribe to an observer, adding it to the audience list
  ****************************************************************/
-void Bullet::subscribe(Status observer) {
+void Bullet::subscribe(Status * observer) {
    audience.push_back(observer);
 }
 
@@ -279,7 +283,7 @@ void Bullet::subscribe(Status observer) {
  * UNSUBSCRIBE
  * unsubscribe to an observer, removing it from the audience list
  ****************************************************************/
-void Bullet::unsubscribe(Status observer) {
+void Bullet::unsubscribe(Status * observer) {
    audience.erase(find(audience.begin(), audience.end(), observer));
 }
 
@@ -290,6 +294,6 @@ void Bullet::unsubscribe(Status observer) {
 void Bullet::notify(int message) {
    for (auto it : audience)
    {
-      it.update(message);
+      it->update(message);
    }
 }

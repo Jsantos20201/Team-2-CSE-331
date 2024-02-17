@@ -54,11 +54,6 @@ void Skeet::animate()
    spawn();
    
    // move the birds and the bullets
-   for (auto element : birds)
-   {
-      element->advance();
-      hitRatio.adjust(element->isDead() ? -1 : 0);
-   }
    for (auto bullet : bullets)
       bullet->move(effects);
    for (auto effect : effects)
@@ -78,7 +73,6 @@ void Skeet::animate()
                effects.push_back(new Fragment(bullet->getPosition(), bullet->getVelocity()));
             element->kill();
             bullet->kill();
-            hitRatio.adjust(1);
             bullet->setValue(-(element->getPoints()));
             element->setPoints(0);
          }
@@ -89,7 +83,6 @@ void Skeet::animate()
       {
          if ((*it)->getPoints())
             points.push_back(Points((*it)->getPosition(), (*it)->getPoints()));
-         score.adjust((*it)->getPoints());
          it = birds.erase(it);
       }
       else
@@ -102,7 +95,6 @@ void Skeet::animate()
          (*it)->death(bullets);
          int value = -(*it)->getValue();
          points.push_back(Points((*it)->getPosition(), value));
-         score.adjust(value);
          it = bullets.erase(it);
       }
       else
